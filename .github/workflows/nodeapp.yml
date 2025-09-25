@@ -18,4 +18,19 @@ jobs:
       uses: actions/setup-node@v5
       with:
          node-version: '15.x'
+ 
+    - name: Install dependencies
+      run: npm install
+ 
+    - name: Linter (ESLint)
+      run: npm run lint
+
+    - name: Formatter (Prettier)
+      run: npm run prettier ––write
+
+    - name: Test (Jest)
+      run: CI=true npm run test
+
+    - name: Build 
+      run: npm run build
 
